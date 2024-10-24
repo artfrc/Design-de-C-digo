@@ -18,8 +18,8 @@ class Calculator1:
    
    def calculate(self, request: FlaskRequest) -> Dict: # type: ignore
       body = request.json
-      inpu_data = self.__validate_body(body)
-      splited_number = inpu_data / 3
+      input_data = self.__validate_body(body)
+      splited_number = input_data / 3
       
       first_process_result  = self.__first_process(splited_number) 
       second_process_result  = self.__second_process(splited_number)
@@ -47,7 +47,7 @@ class Calculator1:
       
       return second_part
    
-   def __format_result(self, calc_result: float) -> float:
+   def __format_result(self, calc_result: float) -> Dict:
       return {
          "data": {
             "Calculator": 1,
