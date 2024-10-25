@@ -1,7 +1,7 @@
 from typing import Dict
 from flask import request as FlaskRequest
 
-class Calculator1:
+class Calculator_1:
    """
    - Um número é dividido em tres partes iguais.
    

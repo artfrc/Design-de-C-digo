@@ -1,6 +1,6 @@
 from typing import Dict
 from pytest import raises
-from .calculator_1 import Calculator1
+from .calculator_1 import Calculator_1
 
 class MockRequest:
    def __init__(self, body: Dict) -> None:
@@ -10,7 +10,7 @@ class MockRequest:
 def test_calculate():
    mock_request = MockRequest(body={"number": 1})
    
-   calculator1 = Calculator1()
+   calculator1 = Calculator_1()
    response = calculator1.calculate(mock_request)
    
    assert "data" in response
@@ -22,7 +22,7 @@ def test_calculate():
    
 def test_calculate_with_body_error():
    mock_request = MockRequest(body={"something": 1})
-   calculator_1 = Calculator1()
+   calculator_1 = Calculator_1()
    
    with raises(Exception) as exinfo:
       calculator_1.calculate(mock_request)
